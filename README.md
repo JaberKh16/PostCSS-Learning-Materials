@@ -285,7 +285,8 @@ module.exports = {
    ```json
    {
      "scripts": {
-       "build:css": "postcss src/style.css -o dist/style.css"
+       "build:css": "postcss ./src/style.css -o ./src/dist/style.css",
+       "watch:css": "postcss ./src/style.css -o ./src/dist/style.css"
      }
    }
    ```
@@ -293,7 +294,8 @@ module.exports = {
 4. Run:
 
    ```bash
-   npm run build:css
+   npm run build:css # for build purpose only
+   npm run watch:css # for change tracking purpose
    ```
 
 ---

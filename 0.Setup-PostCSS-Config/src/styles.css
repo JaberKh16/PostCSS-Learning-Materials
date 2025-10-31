@@ -1,0 +1,48 @@
+body {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+form {
+    margin: 20px;
+}

@@ -1,0 +1,83 @@
+/*
+    Using PostCSS Custom Selectors and Media Queries =>
+    1. reuse custom selectors to group multiple selectors under a single name.
+    2. reuse custom media queries to define media query conditions once and use them throughout the stylesheet.
+    Plugin: requied package postcss-preset-env
+*/
+@custom-selector :--heading h1, h2, h3;
+@custom-media --small-viewport (width <= 600px);
+
+/*
+    Important Stylesheet File
+
+*/
+@import "varaibles.css";
+
+body {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+}
+
+:--heading {
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    @media --small-viewport {
+        color: #555;
+    }
+}
+
+p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+form {
+    margin: 20px;
+}
+
+/* use of asset load => resolve() */
+card {
+    padding: $defaultPadding;
+    margin: $defaultMargin;
+    border: $defaultBorder solid $defaultBorderColor;
+    background-color: resolve("logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 500px;
+}

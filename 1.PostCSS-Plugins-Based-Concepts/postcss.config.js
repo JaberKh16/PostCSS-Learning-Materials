@@ -1,4 +1,4 @@
-const autoprefixer = require("autoprefixer");
+const autoprefixer = require("autoprefixer"); // support vendor presets
 const postcssEnv = require("postcss-preset-env"); // support custom style or grouping
 const postcssImport = require("postcss-import"); // supports import files feature
 const postcssAssetManage = require("postcss-assets"); // supports image files integration

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:css": "postcss src/styles.css -o ./src/dist/styles.css",
-    "watch:css": "postcss src/styles.css -o ./src/dist/styles.css --watch",
+    "build:css": "postcss src/styles.css -o ./dist/styles.css",
+    "watch:css": "postcss src/styles.css -o ./dist/styles.css --watch",
     "live:serve": "live-server --port=3000 --no-browser"
   },
   "keywords": [],

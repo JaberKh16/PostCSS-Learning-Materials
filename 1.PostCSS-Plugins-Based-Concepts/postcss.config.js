@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     autoprefixer,
     postcssEnv({
-      stage: 1,
+      stage: 1, /* default is 2(general support), 1=> support nesting(experimental), 0=>
       features: {
         "nesting-rules": true,
       },

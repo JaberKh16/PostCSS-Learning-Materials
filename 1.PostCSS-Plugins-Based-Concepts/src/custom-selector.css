@@ -1,0 +1,8 @@
+/*
+    Using PostCSS Custom Selectors and Media Queries =>
+    1. reuse custom selectors to group multiple selectors under a single name.
+    2. reuse custom media queries to define media query conditions once and use them throughout the stylesheet.
+    Plugin: requied package postcss-preset-env
+*/
+@custom-selector :--heading h1, h2, h3;
+@custom-media --small-viewport (width <= 600px);

@@ -1,0 +1,37 @@
+/* use of asset load => resolve() */
+card {
+    padding: $defaultPadding;
+    margin: $defaultMargin;
+    border: $defaultBorder solid $defaultBorderColor;
+    background-color: resolve("logo.png"); /*  resolve() function not supported by regular css */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 500px;
+    /* use of other function  */
+    /*
+    width: width('logo.png');
+    width: height('logo.png');
+	*/
+    p{
+    	font-weight: 700;
+    }
+}
+
+/* nesting */
+card {
+    & h2{
+        font-size: 18px;
+        color: #f24529;
+    }
+    /*
+        - on sass  setup => nesting
+        with precess plugin setup supports sass like nesting
+*/
+
+    /*
+    h2{
+        font-size: 18px;
+        color: #f24529;
+    }
+    */
+}

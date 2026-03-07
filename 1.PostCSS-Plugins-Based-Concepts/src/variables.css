@@ -1,4 +1,11 @@
-/* variable declaration */
+/*  general css variable declarattion */
+/*
+	:root {
+		--light-color: '#fcd023'
+	}
+ */
+
+/* sass based variable declaration => precss plugin  */
 $defaultBackground: #3498db;
 $defaultTextColor: #2c3e50;
 $defaultFontSize: 16px;

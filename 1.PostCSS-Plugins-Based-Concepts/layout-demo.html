@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostCSS Layout Demo</title>
+    <link href="./dist/styles.css" rel="stylesheet" />
+    <style>
+      /* Import the layout demo styles */
+      @import "./src/assets/css/layouts/_basic-layout.css";
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Layout -->
+    <nav class="nav-layout">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">Home</li>
+          <li class="nav-item">About</li>
+          <li class="nav-item">Services</li>
+          <li class="nav-item">Contact</li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section">
+      <div class="container">
+        <!-- Using Custom Selector :--heading -->
+        <h1 class="--heading">Layout Demo with PostCSS</h1>
+
+        <!-- Grid Layout Demo -->
+        <section class="section-padding">
+          <h2 class="--heading">Grid Layout System</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <h3>Grid Item 1</h3>
+              <p>
+                This is a grid item using PostCSS variables and custom
+                selectors.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Grid Item 2</h3>
+              <p>Demonstrating the power of PostCSS preprocessing.</p>
+            </div>
+            <div class="card">
+              <h3>Grid Item 3</h3>
+              <p>Responsive design with custom media queries.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sidebar Layout Demo -->
+        <section class="section-padding">
+          <h2 class="--heading">Sidebar Layout</h2>
+          <div class="sidebar-layout">
+            <aside class="card">
+              <h3>Sidebar</h3>
+              <ul>
+                <li>Navigation Item</li>
+                <li>Another Item</li>
+                <li>Third Item</li>
+              </ul>
+            </aside>
+            <main class="main-content">
+              <h3>Main Content Area</h3>
+              <p>
+                This is the main content area that works alongside the sidebar.
+                The layout automatically adjusts on smaller screens using the
+                custom media query --small-viewport.
+              </p>
+              <p>Try resizing your browser to see the responsive behavior!</p>
+            </main>
+          </div>
+        </section>
+
+        <!-- Flexbox Layout Demo -->
+        <section class="section-padding">
+          <h2 class="--heading">Flexbox Layout</h2>
+          <div class="flex flex-between">
+            <div class="card" style="flex: 1">
+              <h3>Left Flex Item</h3>
+              <p>Flexbox layout with space-between.</p>
+            </div>
+            <div class="card" style="flex: 1; margin-left: 1rem">
+              <h3>Right Flex Item</h3>
+              <p>Equal spacing between items.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Article Layout Demo -->
+        <section class="section-padding">
+          <article class="article-layout">
+            <header class="article-header">
+              <h2 class="--heading">Article Layout Example</h2>
+              <p>Published on: Today</p>
+            </header>
+            <div class="article-content">
+              <p>
+                This article layout demonstrates how to use PostCSS for content
+                styling. The custom selector :--heading is applied to all
+                heading elements, providing consistent styling throughout the
+                page.
+              </p>
+              <p>
+                The custom media query --small-viewport ensures that all layouts
+                are responsive and work well on mobile devices.
+              </p>
+              <h3 class="--heading">Subheading with Custom Selector</h3>
+              <p>
+                This subheading also uses the :--heading custom selector,
+                showing how it can be applied to h1, h2, and h3 elements
+                consistently.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Four Column Grid Demo -->
+        <section class="section-padding">
+          <h2 class="--heading">Responsive Grid</h2>
+          <div class="grid grid-4">
+            <div class="card">
+              <h4>Column 1</h4>
+              <p>Responsive grid layout.</p>
+            </div>
+            <div class="card">
+              <h4>Column 2</h4>
+              <p>4 columns on desktop.</p>
+            </div>
+            <div class="card">
+              <h4>Column 3</h4>
+              <p>2 columns on tablet.</p>
+            </div>
+            <div class="card">
+              <h4>Column 4</h4>
+              <p>1 column on mobile.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer Layout -->
+    <footer class="footer-layout">
+      <div class="footer-content">
+        <div>
+          <h4>About</h4>
+          <p>
+            PostCSS layout demonstration with custom selectors and media
+            queries.
+          </p>
+        </div>
+        <div>
+          <h4>Features</h4>
+          <ul>
+            <li>Custom Selectors</li>
+            <li>Custom Media Queries</li>
+            <li>Sass Variables</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Technologies</h4>
+          <ul>
+            <li>PostCSS</li>
+            <li>postcss-preset-env</li>
+            <li>postcss-simple-vars</li>
+            <li>postcss-import</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Demo script to show responsive behavior
+      function updateViewportInfo() {
+        const info = document.createElement("div");
+        info.style.cssText = `
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 10px;
+                border-radius: 4px;
+                font-size: 12px;
+                z-index: 1000;
+            `;
+        info.innerHTML = `Viewport: ${window.innerWidth}px × ${window.innerHeight}px`;
+
+        const existing = document.querySelector(".viewport-info");
+        if (existing) existing.remove();
+        document.body.appendChild(info);
+      }
+
+      window.addEventListener("resize", updateViewportInfo);
+      updateViewportInfo();
+    </script>
+  </body>
+</html>

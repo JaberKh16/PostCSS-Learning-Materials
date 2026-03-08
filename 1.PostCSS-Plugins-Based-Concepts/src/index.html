@@ -1,50 +1,291 @@
-<!--
-    Why Used Of PostCSS
-    ===================
-    - compatible CSS
-    - code optimization
-        - PurgeCSS(remove ununsed CSS)
-        - minification
-    - development support
-        - enable CSS preprocessing(like- Sass)
-        - provide error handling
-        - support of hot reloading
-
-    PostCSS Supports
-    ================
-    - core capabilities:
-        1. CSS Parsing
-        2. Plugin System
-        3. Source Map
-        4. Async Processing
-
-    PostCSS Plugin Materials
-    =========================
-    - avaialable PostCSSS plugins are following:
-        1. autoprefixer
-        2. cssnano
-        3. postcss-nested
-        4. Stylint
-        5. precss
-        6. postcss-preset-env
-        7. postcss-custom-media
--->
-
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
-        <style src="./dist/styles.css"></style>
-    </head>
-    <body>
-        <h1>Hello, World!</h1>
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter Name" />
-            <button type="submit">Submit</button>
-        </form>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Authentication Portal</title>
+    <link href="../dist/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="nav-header">
+      <nav class="main-nav">
+        <div class="nav-brand">
+          <h1>AuthPortal</h1>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#login" class="nav-link active">Login</a></li>
+          <li><a href="#register" class="nav-link">Register</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">☰</button>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-container">
+      <!-- Login Form -->
+      <section id="login" class="auth-section active">
+        <div class="auth-card">
+          <h2 class="auth-title">Welcome Back</h2>
+          <p class="auth-subtitle">Sign in to your account to continue</p>
+
+          <form class="auth-form" id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="loginEmail"
+                name="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                class="form-input"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox-label">
+                <input type="checkbox" name="remember" class="checkbox-input" />
+                <span class="checkbox-text">Remember me</span>
+              </label>
+              <a href="#forgot" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="auth-btn primary">Sign In</button>
+
+            <div class="auth-divider">
+              <span>or continue with</span>
+            </div>
+
+            <div class="social-login">
+              <button type="button" class="social-btn google">
+                <span class="social-icon">G</span>
+                Google
+              </button>
+              <button type="button" class="social-btn github">
+                <span class="social-icon">⚡</span>
+                GitHub
+              </button>
+            </div>
+          </form>
+
+          <div class="auth-switch">
+            <p>
+              Don't have an account?
+              <a href="#register" class="switch-link">Sign up</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Register Form -->
+      <section id="register" class="auth-section">
+        <div class="auth-card">
+          <h2 class="auth-title">Create Account</h2>
+          <p class="auth-subtitle">Join us today and get started</p>
+
+          <form class="auth-form" id="registerForm">
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="firstName" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  class="form-input"
+                  placeholder="John"
+                  required
+                />
+              </div>
+              <div class="form-group half">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="form-input"
+                  placeholder="Doe"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="registerEmail" class="form-label"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="registerEmail"
+                name="email"
+                class="form-input"
+                placeholder="john.doe@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                id="registerPassword"
+                name="password"
+                class="form-input"
+                placeholder="Create a strong password"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                class="form-input"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  class="checkbox-input"
+                  required
+                />
+                <span class="checkbox-text"
+                  >I agree to the
+                  <a href="#terms" class="terms-link"
+                    >Terms & Conditions</a
+                  ></span
+                >
+              </label>
+            </div>
+
+            <button type="submit" class="auth-btn primary">
+              Create Account
+            </button>
+
+            <div class="auth-divider">
+              <span>or sign up with</span>
+            </div>
+
+            <div class="social-login">
+              <button type="button" class="social-btn google">
+                <span class="social-icon">G</span>
+                Google
+              </button>
+              <button type="button" class="social-btn github">
+                <span class="social-icon">⚡</span>
+                GitHub
+              </button>
+            </div>
+          </form>
+
+          <div class="auth-switch">
+            <p>
+              Already have an account?
+              <a href="#login" class="switch-link">Sign in</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="auth-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 AuthPortal. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#support">Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Navigation toggle functionality
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Form switching functionality
+      const navLinks = document.querySelectorAll(".nav-link");
+      const authSections = document.querySelectorAll(".auth-section");
+      const switchLinks = document.querySelectorAll(".switch-link");
+
+      function showSection(sectionId) {
+        authSections.forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(sectionId).classList.add("active");
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          if (document.getElementById(targetId)) {
+            showSection(targetId);
+          }
+        });
+      });
+
+      switchLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          showSection(targetId);
+        });
+      });
+
+      // Form validation
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registerForm");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(loginForm);
+        console.log("Login data:", Object.fromEntries(formData));
+        // Add your login logic here
+      });
+
+      registerForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(registerForm);
+        console.log("Register data:", Object.fromEntries(formData));
+        // Add your registration logic here
+      });
+    </script>
+  </body>
 </html>

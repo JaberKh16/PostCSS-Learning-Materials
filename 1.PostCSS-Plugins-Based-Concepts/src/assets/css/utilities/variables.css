@@ -5,6 +5,18 @@
 	}
  */
 
+
+
+/* primary css based variables */
+:root {
+  --default-width: 100%;
+  --default-border: 1px;
+  --default-border-color: #ccc;
+  --default-padding: 8px;
+  --default-text-color: #333;
+}
+
+
 /* sass based variable declaration => precss plugin  */
 $defaultBackground: #3498db;
 $defaultTextColor: #2c3e50;

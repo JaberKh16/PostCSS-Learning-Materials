@@ -14,21 +14,21 @@ const postcssPlugins = [
 
 // build general setup without plugins
 function buildWithoutPluginStyles() {
-	return gulp.src('./src/css/input.css')
+	return gulp.src('./src/assets/css/styles.css')
 		.pipe(gulp.dest('./dist/css'));
 }
 
 // build task
 function buildStyles() {
-	return gulp.src('./src/css/input.css')
+	return gulp.src('./src/assets/css/styles.css')
 		.pipe(gulpPostCSS(postcssPlugins))
 		.pipe(gulp.dest('./dist/css'));
 }
 
 // watch task
 function watchStyles() {
-	gulp.watch('./src/css/**/*.css', buildStyles);
-	// gulp.watch('./src/css/**/*.css', buildWithoutPluginStyles);
+	gulp.watch('./src/assets/css/**/*.css', buildStyles);
+	// gulp.watch('./src/assets/css/**/*.css', buildWithoutPluginStyles);
 }
 
 exports['build:styles'] = buildStyles;

@@ -8,15 +8,55 @@ A comprehensive collection of PostCSS concepts, plugins, workflows, and practica
 
 ```
 PostCSS-Learning-Materials/
-├── 📖 README.md                           # This file
-├── 📋 POSTCSS-PLUGINS-GUIDE.md           # Complete plugins guide
-├── 🏃‍♂️ POSTCSS-RUNNERS-SETUP.md          # Runner configurations
+├── 📖 README.md                           # This file - Main navigation guide
+├── 📋 POSTCSS-PLUGINS-GUIDE.md           # Complete plugins reference
+├── 🏃‍♂️ POSTCSS-RUNNERS-SETUP.md          # Runner configurations & comparisons
 ├── 🔄 POSTCSS-WORKFLOWS.md                # Best practices & workflows
 ├── 📁 0.Setup-PostCSS-Config/             # Basic PostCSS setup
+│   ├── src/
+│   │   └── styles.css
+│   ├── dist/
+│   │   └── styles.css
+│   ├── postcss.config.js
+│   └── package.json
 ├── 📁 1.PostCSS-Plugins-Based-Concepts/   # Plugin demonstrations
+│   ├── src/
+│   │   ├── index.html                    # Authentication portal
+│   │   ├── layout-demo.html               # Layout system demo
+│   │   ├── styles.css                  # Main styles with partials
+│   │   └── assets/css/
+│   │       ├── utilities/
+│   │       │   ├── custom-selector.css
+│   │       │   └── variables.css
+│   │       └── partials/
+│   │           ├── _variables.css
+│   │           ├── _navigation.css
+│   │           ├── _auth-layout.css
+│   │           ├── _forms.css
+│   │           └── _basic-layout.css
+│   ├── dist/styles.css
+│   ├── postcss.config.js
+│   └── package.json
 ├── 📁 2.PostCSS-With-Gulp-Concepts/       # Gulp integration
+│   ├── src/
+│   │   ├── index.html                    # Layout demo page
+│   │   └── assets/
+│   │       ├── css/
+│   │       │   └── styles.css
+│   │       └── js/
+│   ├── dist/css/styles.css
+│   ├── gulpfile.js
+│   └── package.json
 ├── 📁 3.PostCSS-With-Gulp-And-Sass/       # Gulp + Sass workflow
+│   ├── src/
+│   │   ├── index.html
+│   │   ├── scss/
+│   │   └── css/
+│   ├── dist/
+│   ├── gulpfile.js
+│   └── package.json
 └── 📁 PostCSS-Concepts-Materials          # Additional resources
+    └── PostCSS-Concepts-Materials
 ```
 
 ---
@@ -64,26 +104,37 @@ npm run build:css
 - **Features**: Authentication portal, navigation, forms, layouts
 - **Runner**: PostCSS CLI
 - **Learning**: Plugin combinations, custom selectors, variables
+- **Key Files**:
+  - `src/index.html` - Complete authentication portal
+  - `src/layout-demo.html` - Layout system demonstration
+  - `src/styles.css` - Main styles with partial imports
+  - `src/assets/css/partials/` - Modular CSS components
 
 ```bash
 cd 1.PostCSS-Plugins-Based-Concepts
 npm install
 npm run build:css
-# Open index.html or layout-demo.html
+# Open index.html for authentication demo
+# Open layout-demo.html for layout system
 ```
 
 ### **2. PostCSS With Gulp Concepts** 🔵
 
 - **Purpose**: Gulp integration for task automation
-- **Features**: Automated builds, file watching
+- **Features**: Automated builds, file watching, source maps
 - **Runner**: Gulp
 - **Learning**: Task automation, build processes
+- **Key Files**:
+  - `src/index.html` - Layout demo with PostCSS features
+  - `src/assets/css/styles.css` - Source CSS files
+  - `gulpfile.js` - Build automation configuration
 
 ```bash
 cd 2.PostCSS-With-Gulp-Concepts
 npm install
-npm run gulp:build
-npm run gulp:watch
+npm run gulp:build    # Build once
+npm run gulp:watch    # Watch for changes
+# Open src/index.html to see results
 ```
 
 ### **3. PostCSS With Gulp And Sass** 🟣
@@ -92,12 +143,16 @@ npm run gulp:watch
 - **Features**: Sass + PostCSS pipeline, complex builds
 - **Runner**: Gulp + Sass
 - **Learning**: Preprocessor integration, complex pipelines
+- **Key Files**:
+  - `src/` - Source files with Sass and HTML
+  - `gulpfile.js` - Advanced build configuration
+  - `dist/` - Compiled output
 
 ```bash
 cd 3.PostCSS-With-Gulp-And-Sass
 npm install
-npm run gulp:build
-npm run gulp:watch
+npm run gulp:build    # Build with Sass preprocessing
+npm run gulp:watch    # Watch Sass and CSS changes
 ```
 
 ---
@@ -250,20 +305,6 @@ This is a learning repository. Feel free to:
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🧭 Navigation
-
-| Topic             | Location                            | Difficulty      |
-| ----------------- | ----------------------------------- | --------------- |
-| Basic Setup       | `0.Setup-PostCSS-Config/`           | 🟢 Beginner     |
-| Plugin Examples   | `1.PostCSS-Plugins-Based-Concepts/` | 🟡 Intermediate |
-| Gulp Integration  | `2.PostCSS-With-Gulp-Concepts/`     | 🔵 Intermediate |
-| Advanced Workflow | `3.PostCSS-With-Gulp-And-Sass/`     | 🟣 Advanced     |
-| Plugin Reference  | `POSTCSS-PLUGINS-GUIDE.md`          | 📚 All Levels   |
-| Runner Setup      | `POSTCSS-RUNNERS-SETUP.md`          | 📚 All Levels   |
-| Best Practices    | `POSTCSS-WORKFLOWS.md`              | 📚 All Levels   |
 
 ---
 

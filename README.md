@@ -12,7 +12,7 @@ PostCSS-Learning-Materials/
 ├── 📋 POSTCSS-PLUGINS-GUIDE.md           # Complete plugins reference
 ├── 🏃‍♂️ POSTCSS-RUNNERS-SETUP.md          # Runner configurations & comparisons
 ├── 🔄 POSTCSS-WORKFLOWS.md                # Best practices & workflows
-├── 📁 0.Setup-PostCSS-Config/             # Basic PostCSS setup
+├── 📁 0.Setup-PostCSS-Config/             # Basic PostCSS  setup
 │   ├── src/
 │   │   └── styles.css
 │   ├── dist/
